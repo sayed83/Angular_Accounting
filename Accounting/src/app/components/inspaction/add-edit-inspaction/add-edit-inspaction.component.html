@@ -1,0 +1,21 @@
+<form >
+  <div class="mb-3">
+    <label for="inspactionTypeId" class="form-label">Inspection Type</label>
+    <input type="text" class="form-control" id="inspactionTypeId" name="inspactionTypeId" [(ngModel)]="inspactionTypeId" *ngIf="inspaction.inspactionId!= 0" disabled>
+    <select name="inspactionTypeId" id="inspactionTypeId" class="form-control" [(ngModel)]="inspactionTypeId" *ngIf="inspaction.inspactionId==0">
+      <option *ngFor="let type of inspactionTypesList$|async" [value]="type.inspactionTypeId">{{type.inspactionName}}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="status" class="form-label">Status</label>
+    <select name="status" id="status" class="form-control" [(ngModel)]="status">
+      <option *ngFor="let status of statusList$|async" [value]="status.statusOption">{{status.statusOption}}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="comments" class="form-label">comments</label>
+    <input type="text" class="form-control" [(ngModel)]="comments" name="comments">
+  </div>
+<button (click)="addInspaction()" *ngIf="inspaction.inspactionId==0" class="btn btn-primary">Save</button>
+<button (click)="updateInspaction()" *ngIf="inspaction.inspactionId != 0" class="btn btn-warning">Update</button>
+</form>

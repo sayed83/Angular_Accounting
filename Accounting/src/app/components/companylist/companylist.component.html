@@ -1,0 +1,29 @@
+<button (click)="initNewCompany()">Create New</button>
+<table class="table table-responsive">
+    <thead>
+      <th>ComId</th>
+      <th>Name</th>
+      <th>ComType</th>
+      <th>BusinessType</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Working Hour</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let company of companies">
+          <td>{{company.comId}}</td>
+          <td>{{company.name}}</td>
+          <td>{{company.comType}}</td>
+          <td>{{company.businessType}}</td>
+          <td>{{company.address}}</td>
+          <td>{{company.phone}}</td>
+          <td>{{company.email}}</td>
+          <td>{{company.workingHour}}</td>
+          <td><a (click)="editCompany(company)" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-company [company]="companyToEdit"></app-company>

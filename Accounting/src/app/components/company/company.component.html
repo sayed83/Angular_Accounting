@@ -1,0 +1,33 @@
+<div *ngIf="company">
+    <div>
+        Name:
+        <input [(ngModel)]="company.name" placeholder="Name"/>
+    </div>
+    <div>
+        Com Type:
+        <input [(ngModel)]="company.comType" placeholder="Com Type"/>
+    </div>
+    <div>
+        Business Type:
+        <input [(ngModel)]="company.businessType" placeholder="Business Type"/>
+    </div>
+    <div>
+        Address:
+        <input [(ngModel)]="company.address" placeholder="Address"/>
+    </div>
+    <div>
+        Phone:
+        <input [(ngModel)]="company.phone" placeholder="Phone"/>
+    </div>
+    <div>
+        Email:
+        <input [(ngModel)]="company.email" placeholder="Email"/>
+    </div>
+    <div>
+        Working Hour:
+        <input [(ngModel)]="company.workingHour" placeholder="Working Hour"/>
+    </div>
+    <button (click)="updateCompany(company)" *ngIf="company.comId">Edit</button>
+    <button (click)="deleteCompany(company)" *ngIf="company.comId">Delete</button>
+    <button (click)="createCompany(company)" *ngIf="!company.comId">Create</button>
+</div>

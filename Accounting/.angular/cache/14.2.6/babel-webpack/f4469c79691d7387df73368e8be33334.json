@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Company {\n  constructor() {\n    this.comId = 0;\n    this.name = \"\";\n    this.comType = \"\";\n    this.businessType = \"\";\n    this.address = \"\";\n    this.phone = \"\";\n    this.email = \"\";\n    this.workingHour = 8;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

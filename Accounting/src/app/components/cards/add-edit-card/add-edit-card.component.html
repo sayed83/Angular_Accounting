@@ -1,0 +1,61 @@
+<h1>Card List And Entry Form</h1>
+<div class="cards-container">
+  <div class="card-grid">
+    <table class="table table-bordered">
+      <thead>
+        <tr class="text-center">
+          <th>Card Name</th>
+          <th>Card Number</th>
+          <th>Expiry Month</th>
+          <th>Expiry Year</th>
+          <th>CVC</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let card of cards"  class="text-center">
+          <td>{{card.cardHolderName}}</td>
+          <td>{{card.cardNumber}}</td>
+          <td>{{card.expiryMonth}}</td>
+          <td>{{card.expiryYear}}</td>
+          <td>{{card.cvc}}</td>
+          <td>
+            <a (click)="deleteCard(card.id)" class="btn btn-danger m-1"><i class="fa-solid fa-trash-can"></i></a>
+            <a (click)="populateForm(card)" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-form">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="" >Card Holder Name</label>
+        <input type="text" name="cardHolderName" [(ngModel)]="card.cardHolderName">
+      </div>
+      <div class="form-group">
+        <label for="" >Card Number</label>
+        <input type="text" name="cardNumber" [(ngModel)]="card.cardNumber">
+      </div>
+      <div class="form-group form-group-inline">
+        <div>
+          <label for="" >Expiry Monthe</label>
+          <input type="text" name="expiryMonth" [(ngModel)]="card.expiryMonth">
+        </div>
+        <div>
+          <label for="" >Expiry Year</label>
+          <input type="text" name="expiryYear" [(ngModel)]="card.expiryYear">
+        </div>
+        <div>
+          <label for="" >CVC</label>
+          <input type="text" name="cvc" [(ngModel)]="card.cvc">
+        </div>
+      </div>
+      <div class="form-group">
+        <button>Submit</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
